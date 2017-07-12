@@ -39,4 +39,23 @@ def delete(book_id):
     mysql.query_db(query,data)
     return redirect ('/book_list')
 
+@app.route('/update_book/<book_id>')
+def update_book(book_id):
+    query = 'select * from books where id = :id'
+    data = {'id': book_id}
+    book_info = mysql.query_db(query, data)
+    book = book_info[0]
+    return render_template ('update_book.html', book = book)
+
+@app.route('/update_commit/<book_id>', methods = ["POST"])
+def update_commit(book_id):
+    query = 'update books set author = :author, title = :title, updated_at = NOW() where id = :id'
+    data = {
+        'author' : request.form['author'],
+        'title' : request.form['title'],
+        'id' : book_id
+    }
+    mysql.query_db(query, data)
+    return redirect('/book_list')
+
 app.run(debug=True)

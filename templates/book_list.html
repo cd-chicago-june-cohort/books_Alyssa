@@ -21,7 +21,7 @@
                     <td>{{book.title}}</td>
                     <td>{{book.author}}</td>
                     <td>{{book.date_added}}</td>
-                    <td><a href="/delete_confirm/{{book.id}}">delete</a>
+                    <td><a href="/delete_confirm/{{book.id}}">delete</a>  <a href="/update_book/{{book.id}}">update</a></td>
                 </tr>
             {% endfor %}
         </tbody>
