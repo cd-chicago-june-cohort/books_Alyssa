@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Quote</title>
+</head>
+<body>
+    <h1>Add a Quote</h1>
+    <p>For {{book.title}}</p>
+    <form action="/quote_commit/{{book.id}}", method='post'>
+        <label for="quote">Quote:</label><br/>
+        <textarea name="quote" cols="100" rows="10"></textarea><br/>
+        <input type="submit" value ="Add Quote">
+        <button type="submit" formaction="/book_list">Back to Books</button>
+    </form>
+    
+</body>
+</html>

@@ -18,13 +18,14 @@
         <tbody>
             {% for book in all_books %}
                 <tr>
-                    <td>{{book.title}}</td>
+                    <td><a href="/quotes/{{book.id}}">{{book.title}}</a></td>
                     <td>{{book.author}}</td>
                     <td>{{book.date_added}}</td>
-                    <td><a href="/delete_confirm/{{book.id}}">delete</a>  <a href="/update_book/{{book.id}}">update</a></td>
+                    <td><a href="/delete_confirm/{{book.id}}">delete</a>  <a href="/update_book/{{book.id}}">update</a>  <a href="/add_quote/{{book.id}}">add quote</a></td>
                 </tr>
             {% endfor %}
         </tbody>
     </table>
+    <a href="/">Add a Book</a>
 </body>
 </html>
