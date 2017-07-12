@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Books</title>
+</head>
+<body>
+    <h1>My Books</h1>
+    <table>
+        <thead>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Date Added</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            {% for book in all_books %}
+                <tr>
+                    <td>{{book.title}}</td>
+                    <td>{{book.author}}</td>
+                    <td>{{book.date_added}}</td>
+                    <td><a href="/delete_confirm/{{book.id}}">delete</a>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
